@@ -1,11 +1,12 @@
 from pyrae import dle
 import json
-import pandas as pd
-# constants:
+
+# Constants:
 ESP_FILE_PATH = "../Vocabulary/Esp/vocabulario_esp.txt"
 PATH_TO_SAVE = "../Vocabulary/Esp/"
-# functions:
 
+
+# Functions:
 # Words manipulation
 
 
