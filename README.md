@@ -1,7 +1,7 @@
 
 # Automated Spanish Flash Cards Vocabulary Dataset Creation.
 
-Use the RAE API to create several Spanish Words Flash Cards data.
+Use a [RAE API](https://pypi.org/project/pyrae/) to create several Spanish Words Flash Cards data.
 This automation take a .txt as input file. Returns both .json and .csv 
 files.
 The data includes two categories:
