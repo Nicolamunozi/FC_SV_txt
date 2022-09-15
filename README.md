@@ -54,7 +54,7 @@ To create your own Spanish Flash Cards data:
  Avoid to use any other punctuation i.e. (`.`, `:`, `;`, `etc`).
  
  `UTF-8` encoding is used to take over the common accentuation
- at spansih words.
+ at Spanish words.
 
 2. Execute `main.py` to get the `flash_cards_esp.json` file stored on
    `Vocabulary/Esp/`. To do this, navigate to the main 
@@ -82,9 +82,9 @@ To create your own Spanish Flash Cards data:
 
    &nbsp;If you are an IOS user, 
    you can install [this free app](https://apps.apple.com/cl/app/flash-cards/id1454664875?l=en&fbclid=IwAR0fd_d8gPQNVyOSXNUBvjEbL3p6L2r584AeiDAONxe6I3zfd7P9b9SrxMA) 
-   that allows import carda from json formated data: Copy text inside `flash_cards_esp.json` and paste to the import box. 
+   that allows import cards from json formatted data: Copy text inside `flash_cards_esp.json` and paste to the import box. 
 
-   &nbsp;In online Apps like [this one](https://www.cram.com/flashcards/create) you can use the csv formated data.
+   &nbsp;In online Apps like [this one](https://www.cram.com/flashcards/create) you can use the csv formatted data.
    Open the `flash_cards_esp.csv` in raw mode (it should look like &nbsp;[this](https://raw.githubusercontent.com/Nicolamunozi/FC_SV_txt/main/Vocabulary/Esp/flash_cards_esp.csv)).
    Copy the raw text and paste it to the `COPY AND PASTE YOUR DATA` section. Then, select `COMMA` option for `BETWEEN TERM AND`&nbsp; `DEFINITION` and `CUSTOM` in `BETWEEN DEFINITION AND CARD` 
    and fill the box with `."\n`. Finally, create flash cards. IMPORTANT: Make &nbsp;sure that hint side is hide. 
