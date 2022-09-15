@@ -1,5 +1,5 @@
 
-# Automated Spanish Flash Cards Vocabulary Dataset Creation.
+# Automated dataset creation for Spanish vocabulary Flash Cards with Python.
 
 Use a [RAE API](https://pypi.org/project/pyrae/) to create several Spanish Words Flash Cards data.
 This automation take a .txt as input file. Returns both .json and .csv 
@@ -54,7 +54,7 @@ To create your own Spanish Flash Cards data:
  Avoid to use any other punctuation i.e. (`.`, `:`, `;`, `etc`).
  
  `UTF-8` encoding is used to take over the common accentuation
- at Spanish words.
+ at spanish words.
 
 2. Execute `main.py` to get the `flash_cards_esp.json` file stored on
    `Vocabulary/Esp/`. To do this, navigate to the main 
@@ -71,8 +71,8 @@ To create your own Spanish Flash Cards data:
         2022-09-14 11:08:38,746 - INFO    - dle.search_by_url - Performing request to: 'https://dle.rae.es/vivisecciones'...    
 
 3. At this point you can execute `create_csv.py` which uses the json data created
-   before to return `flash_cards_esp.csv` file to folder `Vocabulary/Esp/`.
-
+   before to create `flash_cards_esp.csv` file into `Vocabulary/Esp/` folder.
+	
         python create_csv.py
    
 4. You can use the created data to import several Flash Cards in apps.
