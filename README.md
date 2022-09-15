@@ -47,11 +47,11 @@ Para crear sus propios datos de Flash Cards en español:
         palabra3,
         palabra4,
 
- Está bien incluir el carácter `,` al final de cada palabra.
- Evite usar cualquier otro signo de puntuación, es decir, (`.`, `:`, `;`, `etc`).
+   Está bien incluir el carácter `,` al final de cada palabra.
+   Evite usar cualquier otro signo de puntuación, es decir, (`.`, `:`, `;`, `etc`).
  
- La codificación `UTF-8` se utiliza para hacerse cargo de la acentuación común
- en palabras en español.
+   La codificación `UTF-8` se utiliza para hacerse cargo de la acentuación común
+   en palabras en español.
  
 
 2. Ejecute `main.py` para obtener el archivo `flash_cards_esp.json` almacenado en
