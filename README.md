@@ -1,117 +1,108 @@
+# Creación automatizada de datos para Tarjetas Mnemotecnicas (Flash Cards) de vocabulario en Español usando Python.
 
-# Automated dataset creation for Spanish vocabulary Flash Cards with Python.
+Utilice una [API de RAE](https://pypi.org/project/pyrae/) para crear datasets de Tarjetas nmemotecnicas de vocabulario en español.
+Esta automatización toma un .txt como archivo de entrada. Y devuelve archivos .json y .csv.  
+Los datos incluyen dos categorías:
 
-Use a [RAE API](https://pypi.org/project/pyrae/) to create several Spanish Words Flash Cards data.
-This automation take a .txt as input file. Returns both .json and .csv 
-files.
-The data includes two categories:
+* question: Palabra en Español
+* answer: Etimología de la palabra, clase, definición y ejemplos.
 
-* question: Spanish Word 
-* answer: Word etymology, class, definition and examples. 
-
-Definition and class are guaranteed for each word in RAE dictionary.
+La definición y la clase están garantizadas para cada palabra del diccionario de la RAE.
    
 
-  
+ 
 
 
 
+## Instalación
 
-## Installation
-
-1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
-   to your local device. 
-2. Navigate to the main project folder in terminal.   
-3. [Create](https://stackoverflow.com/questions/48787250/set-up-virtualenv-using-a-requirements-txt-generated-by-conda) 
-   virtualenv  using `requirements.txt`
+1. [Clonar](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+   a su dispositivo local.
+2. Navegue a la carpeta principal del proyecto en la terminal.
+3. [Crear](https://stackoverflow.com/questions/48787250/set-up-virtualenv-using-a-requirements-txt-generated-by-conda)
+   un entorno virtual usando `requirements.txt`
    
-```cmd
-# Using pip
+``` cmd
+# Usando pip
 pip install -r requirements.txt
 
-# Using conda
-conda create --name <env_name> --file requirements.txt
+# Usando conda
+conda create --name <nombre_entorno_virtual> --file requirements.txt
 ```
     
-## How to use
+## Cómo utilizar
 
-Codes are located inside `./code/` and some variables inside refers to files located
-in `./Vocabulary/ESP/`.
+Los códigos se encuentran dentro de `./code/` y algunas variables dentro se refieren a archivos ubicados
+en `./Vocabulario/ESP/`.
 
-Avoid to rename files. 
+Evite cambiar el nombre de los archivos.
 
-To create your own Spanish Flash Cards data:
+Para crear sus propios datos de Flash Cards en español:
 
-1. Navigate to `./Vocabulary/ESP/` folder and edit `vocabulario_esp.txt` with your own word. 
-   Make sure to insert 1 word per line:
+1. Navega a la carpeta `./Vocabulario/ESP/` y edita `vocabulario_esp.txt` con tu propia palabra.
+   Asegúrese de insertar 1 palabra por línea:
 
-        word1,
-        word2,
-        word3,
-        word4,
+        palabra1,
+        palabra2,
+        palabra3,
+        palabra4,
 
- It's ok to include `,` character at the end of each word.  
- Avoid to use any other punctuation i.e. (`.`, `:`, `;`, `etc`).
+ Está bien incluir el carácter `,` al final de cada palabra.
+ Evite usar cualquier otro signo de puntuación, es decir, (`.`, `:`, `;`, `etc`).
  
- `UTF-8` encoding is used to take over the common accentuation
- at spanish words.
+ La codificación `UTF-8` se utiliza para hacerse cargo de la acentuación común
+ en palabras en español.
+ 
 
-2. Execute `main.py` to get the `flash_cards_esp.json` file stored on
-   `Vocabulary/Esp/`. To do this, navigate to the main 
-   project folder in terminal and type:
+2. Ejecute `main.py` para obtener el archivo `flash_cards_esp.json` almacenado en
+   `Vocabulario/Esp/`. Para hacer esto, navegue a la página principal
+   carpeta del proyecto en la terminal y escriba:
 
-       conda activate <env_name> 
-       cd code 
+       conda activate <nombre_entorno_virtual>
+       cd code
        python main.py
 
-   You'll see the code workflow in terminal... something like this:
+   Verá el flujo de trabajo del código en la terminal... algo como esto:
 
-        2022-09-14 11:08:37,339 - INFO    - dle.search_by_url - Performing request to: 'https://dle.rae.es/connivencia'...
-        2022-09-14 11:08:38,002 - INFO    - dle.search_by_url - Performing request to: 'https://dle.rae.es/aunar'...
-        2022-09-14 11:08:38,746 - INFO    - dle.search_by_url - Performing request to: 'https://dle.rae.es/vivisecciones'...    
+        2022-09-14 11:08:37,339 - INFO - dle.search_by_url - Realizando solicitud a: 'https://dle.rae.es/connivencia'...
+        2022-09-14 11:08:38,002 - INFO - dle.search_by_url - Realizando solicitud a: 'https://dle.rae.es/aunar'...
+        2022-09-14 11:08:38,746 - INFO - dle.search_by_url - Realizando solicitud a: 'https://dle.rae.es/vivisecciones'...
 
-3. At this point you can execute `create_csv.py` which uses the json data created
-   before to create `flash_cards_esp.csv` file into `Vocabulary/Esp/` folder.
-	
-        python create_csv.py
+3. En este punto, puede ejecutar `create_csv.py`, que usa los datos json creados
+   antes para crear el archivo `flash_cards_esp.csv` en la carpeta `Vocabulary/Esp/`.
+
+        python crear_csv.py
    
-4. You can use the created data to import several Flash Cards in apps.
+4. Puede usar los datos creados para importar varias tarjetas flash en aplicaciones.
 
-   Some options:
-
-
-   &nbsp;If you are an IOS user, 
-   you can install [this free app](https://apps.apple.com/cl/app/flash-cards/id1454664875?l=en&fbclid=IwAR0fd_d8gPQNVyOSXNUBvjEbL3p6L2r584AeiDAONxe6I3zfd7P9b9SrxMA) 
-   that allows import cards from json formatted data: Copy text inside `flash_cards_esp.json` and paste to the import box. 
-
-   &nbsp;In online Apps like [this one](https://www.cram.com/flashcards/create) you can use the csv formatted data.
-   Open the `flash_cards_esp.csv` in raw mode (it should look like &nbsp;[this](https://raw.githubusercontent.com/Nicolamunozi/FC_SV_txt/main/Vocabulary/Esp/flash_cards_esp.csv)).
-   Copy the raw text and paste it to the `COPY AND PASTE YOUR DATA` section. Then, select `COMMA` option for `BETWEEN TERM AND`&nbsp; `DEFINITION` and `CUSTOM` in `BETWEEN DEFINITION AND CARD` 
-   and fill the box with `."\n`. Finally, create flash cards. IMPORTANT: Make &nbsp;sure that hint side is hide. 
-
-   &nbsp;In this [another option](https://www.goconqr.com/) you can directly import flash cards uploading the CSV file. 
+   Algunas opciones:
 
 
+   &nbsp;Si es usuario de IOS,
+   puedes instalar [esta aplicación gratuita](https://apps.apple.com/cl/app/flash-cards/id1454664875?l=en&fbclid=IwAR0fd_d8gPQNVyOSXNUBvjEbL3p6L2r584AeiDAONxe6I3zfd7P9b9SrxMA)
+   que permite importar tarjetas desde datos con formato json: copie el texto dentro de `flash_cards_esp.json` y péguelo en el cuadro de importación.
+
+   &nbsp;En aplicaciones en línea como [esta](https://www.cram.com/flashcards/create) puedes usar los datos con formato csv.
+   Abra `flash_cards_esp.csv` en modo de edición &nbsp;(debería verse como [esto](https://raw.githubusercontent.com/Nicolamunozi/FC_SV_txt/main/Vocabulary/Esp/flash_cards_esp.csv)).
+   Copie el texto y péguelo en la sección `COPIAR Y PEGAR SUS DATOS`. Luego, seleccione la opción `COMA` para `ENTRE TÉRMINO Y DEFINICIÓN` y `PERSONALIZADO` en `ENTRE DEFINICIÓN Y TARJETA`
+   y llene el cuadro con `."\n`. &nbsp;Finalmente, cree tarjetas flash. IMPORTANTE: Asegúrese de que &nbsp;asegúrese de que el lado de la sugerencia esté oculto.
+
+   &nbsp;En esta [otra opción](https://www.goconqr.com/) puede importar tarjetas flash directamente cargando el archivo CSV.
 
 
 
-        
+
 
  
 
 
 
 
-
-
-
-
-## Authors
+## Autores
 
 - [@Nicolás Muñoz](https://www.github.com/Nicolamunozi)
 
 
-## Feedback
+## Retroalimentación
 
-If you have any feedback, please reach out me at nicolamunozi@gmail.com
-
+Si tiene algún comentario, comuníquese conmigo a nicolamunozi@gmail.com
